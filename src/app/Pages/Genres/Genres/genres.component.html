@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="row">
+        <div class="col-9">
+            <h2>Genre Table</h2>
+        </div>
+        <div class="col">
+            <button type="button" class="btn btn-success" routerLink="addGenre">Add Genre</button>
+        </div>
+    </div>
+    <br/>
+    <table *ngIf="genres.length > 0" class="table table-borderless">
+        <thead>
+            <tr>
+            <th scope="col">Genre Id</th>
+            <th scope="col">Genre Name</th>
+            <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let genre of genres">
+                <td>{{genre.genreId}}</td>
+                <td>{{genre.genreName}}</td>
+                <td>
+                    <button type="button" class="btn btn-dark" routerLink="updateGenre/{{genre.genreId}}">Edit</button>
+                    &nbsp; &nbsp;
+                    <button type="button" class="btn btn-danger" (click)="deleteGenre(genre.genreId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

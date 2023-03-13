@@ -1,0 +1,19 @@
+<div class="container">
+
+    <h2>Add Genre</h2>
+
+    <br/>
+
+    <form #Form="ngForm" (ngSubmit)="addGenre(genre)">
+        <div class="form-group">
+          <label for="genreName">Genre Name</label>
+          <input type="text" class="form-control" id="genreName" placeholder="Enter Genre Name" name="genreName" [(ngModel)]="genre.genreName">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Genre</button>
+    </form>
+
+</div>
+
+<br/>
+
+<a href="#" class="badge badge-dark" (click)="goBack();">Go Back</a>

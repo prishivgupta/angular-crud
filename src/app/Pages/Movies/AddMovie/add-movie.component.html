@@ -1,0 +1,27 @@
+<div class="container">
+
+    <h2>Add Movie</h2>
+
+    <br/>
+
+    <form #Form="ngForm" (ngSubmit)="addMovie(movie)">
+        <div class="form-group">
+          <label for="movieName">Movie Name</label>
+          <input type="text" class="form-control" id="movieName" placeholder="Enter Movie Name" name="movieName" [(ngModel)]="movie.movieName">
+        </div>
+        <div class="form-group">
+            <label for="genre">Select Genre</label>
+            <select class="form-control" id="genre" name="genre" [(ngModel)]="movie.genreId">
+              <option *ngFor="let genre of genres" [ngValue]="genre.genreId">
+                {{genre.genreName}}
+              </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Movie</button>
+    </form>
+
+</div>
+
+<br/>
+
+<a href="#" class="badge badge-dark" (click)="goBack();">Go Back</a>
